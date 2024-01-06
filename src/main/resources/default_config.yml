@@ -1,0 +1,3 @@
+pterodactyl:
+  api-url: "https://votre-url-api-pterodactyl.com"
+  api-key: "votre-cle-api-pterodactyl"

@@ -1,0 +1,14 @@
+{
+  "id": "dreamhost",
+  "name": "DreamHost",
+  "version": "1.0.0",
+  "main": "dev.funasitien.dreamhost.DreamHost",
+  "description": "Un plugin de host Velocity",
+  "url": "https://dreamclouds.fr",
+  "authors": [
+    "Funasitien"
+  ],
+  "dependencies": {
+    "velocity": ">=3.0.0"
+  }
+}

@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="DreamHost:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/DreamHost_jar</output-path>
+    <root id="archive" name="DreamHost_jar.jar">
+      <element id="archive" name="DreamHost.jar">
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/compiled/META-INF/MANIFEST.MF" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
