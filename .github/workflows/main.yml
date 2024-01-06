@@ -6,7 +6,6 @@ on:
       - "master"
     # Ignore documentation
     paths-ignore:
-      - "README.md"
       - "docs/**"
 
 jobs:
