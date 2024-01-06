@@ -1,4 +1,4 @@
-name: "Prerelease"
+name: "⭐ Build Mineraft Jar"
 on: 
   push:
     # Run on the main branch
