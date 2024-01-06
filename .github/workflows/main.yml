@@ -1,0 +1,42 @@
+name: "Prerelease"
+on: 
+  push:
+    # Run on the main branch
+    branches: 
+      - "master"
+    # Ignore documentation
+    paths-ignore:
+      - "README.md"
+      - "docs/**"
+
+jobs:
+  pre-release:
+    name: "Pre-release"
+    runs-on: ubuntu-latest
+    steps:
+      # clone our repository into the runner
+      - uses: actions/checkout@v2
+      # install java on the runner
+      - name: Setup JDK 16
+        uses: actions/setup-java@v1
+        with:
+          java-version: 16
+      # check that gradle is set up with a wrapper correctly
+      - name: Validate Gradle Wrapper
+        uses: gradle/wrapper-validation-action@v1 
+      # make sure that our plugin builds
+      - name: Build Project
+        run: ./gradlew build
+      # build the jars
+      - name: Build Jars
+        run: ./gradlew jar
+      # create a development build
+      - name: Release
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Development Build"
+          files: |
+                        build/libs/*.jar
